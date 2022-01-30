@@ -53,3 +53,47 @@ function multiplicar(numA, numB) {
 }
 console.log(multiplicar(2, 3));
 console.log(multiplicar(2.5, 4));
+// tipo função
+let calculo;
+calculo = multiplicar;
+console.log(calculo(3, 5));
+// objetos
+let usuario = {
+    nome: "João",
+    idade: 27,
+};
+// usuario = {}
+console.log(usuario);
+usuario = {
+    nome: "Maria",
+    idade: 31,
+};
+console.log(usuario);
+let funcionario = {
+    supervisores: ["Carlos", "João", "Roberto"],
+    baterPonto: (hora) => {
+        if (hora > 8) {
+            return "Fora do horário";
+        }
+        return "Ponto normal";
+    }
+};
+let funcionario2 = {
+    supervisores: ["Bia", "João", "Fernando"],
+    baterPonto: (hora) => {
+        if (hora > 8) {
+            return "Fora do horário";
+        }
+        return "Ponto normal";
+    }
+};
+console.log(funcionario);
+console.log(funcionario.supervisores);
+console.log(funcionario.baterPonto(8));
+console.log(funcionario.baterPonto(9));
+// Union Types
+let nota = 10;
+console.log(`Minha nota é ${nota}`);
+nota = "10";
+console.log(`Minha nota é ${nota}`);
+// nota = true;

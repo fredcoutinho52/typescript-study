@@ -65,3 +65,60 @@ function multiplicar(numA: number, numB: number): number {
 
 console.log(multiplicar(2, 3));
 console.log(multiplicar(2.5, 4));
+
+// tipo função
+let calculo: (numeroA: number, numeroB: number) => number;
+calculo = multiplicar;
+console.log(calculo(3, 5));
+
+// objetos
+let usuario: { nome: string, idade: number } = {
+    nome: "João",
+    idade: 27,
+}
+// usuario = {}
+console.log(usuario);
+
+usuario = {
+    nome: "Maria",
+    idade: 31,
+}
+console.log(usuario);
+
+// desafio / alias
+type Funcionario = {
+    supervisores: string[],
+    baterPonto: (hora: number) => string
+}
+
+let funcionario: Funcionario = {
+    supervisores: ["Carlos", "João", "Roberto"],
+    baterPonto: (hora: number): string => {
+        if (hora > 8) {
+            return "Fora do horário";
+        }
+        return "Ponto normal";
+    }
+}
+
+let funcionario2: Funcionario = {
+    supervisores: ["Bia", "João", "Fernando"],
+    baterPonto: (hora: number): string => {
+        if (hora > 8) {
+            return "Fora do horário";
+        }
+        return "Ponto normal";
+    }
+}
+
+console.log(funcionario);
+console.log(funcionario.supervisores);
+console.log(funcionario.baterPonto(8));
+console.log(funcionario.baterPonto(9));
+
+// Union Types
+let nota: number | string = 10;
+console.log(`Minha nota é ${nota}`);
+nota = "10";
+console.log(`Minha nota é ${nota}`);
+// nota = true;
