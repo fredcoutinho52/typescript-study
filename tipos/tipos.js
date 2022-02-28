@@ -97,3 +97,57 @@ console.log(`Minha nota é ${nota}`);
 nota = "10";
 console.log(`Minha nota é ${nota}`);
 // nota = true;
+// checando tipos
+let valor = 30;
+// valor = false;
+if (typeof valor === "number") {
+    console.log("valor number");
+}
+else {
+    console.log(typeof valor);
+}
+// never
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: "Sabão",
+    preco: 9,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length === 0) {
+            falha("Precisa ter um nome");
+        }
+        if (this.preco <= 0) {
+            falha("Preço inválido");
+        }
+    }
+};
+produto.validarProduto();
+let altura = 12;
+// altura = null;
+let alturaOpcional = 12;
+alturaOpcional = null;
+const contato1 = {
+    nome: "Fulano",
+    tel1: "4234324",
+    tel2: null,
+};
+console.log(contato1.nome);
+console.log(contato1.tel1);
+console.log(contato1.tel2);
+let podeSerNulo = null;
+podeSerNulo = 12;
+podeSerNulo = "abc";
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor;
+    }
+};
+let correntista = {
+    nome: "Ana",
+    contaBancaria: contaBancaria,
+    contatos: ["2423423", "65645645"],
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
