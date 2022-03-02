@@ -1,24 +1,22 @@
-let canal: string = "Gaveta";
-let inscritos: number = 64234;
-
+"use strict";
+let canal = "Gaveta";
+let inscritos = 64234;
 // canal = inscritos;
 console.log(`Canal = ${canal}`);
-
-function soma(a: any, b: any) {
+function soma(a, b) {
     return a + b;
 }
-
 let qualquerCoisa;
 qualquerCoisa = 12;
 qualquerCoisa = "abc";
-
-function saudar(isManha: boolean): string {
-    let saudacao: string;
+function saudar(isManha) {
+    let saudacao;
     if (isManha) {
         saudacao = "Bom dia!";
-    } else {
+    }
+    else {
         saudacao = "Olá!";
     }
-
     return saudacao;
 }
+//# sourceMappingURL=compilador.js.map
